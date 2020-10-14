@@ -6,7 +6,7 @@ def remote = [:]
     node() {
         remote.user = 'root'
         remote.password = 'YsBBB4zgzn9Fjoe'
-        withCredentials([usernamePassword(credentialsId: 'kitrumvm', passwordVariable: 'YsBBB4zgzn9Fjoe', usernameVariable: 'root')]){
+        withCredentials([usernamePassword(credentialsId: 'kitrumvm', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
     stage('Install services'){
     sshCommand remote: remote, command: 'sudo dnf clean all'
     sshCommand remote: remote, command: 'sudo rm -r /var/cache/dnf'
